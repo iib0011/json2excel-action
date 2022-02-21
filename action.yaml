@@ -2,10 +2,10 @@
 name: 'Json to Excel'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  zap:  # id of input
+    description: 'Path to zap'
     required: true
-    default: 'World'
+    default: 'report_json.json'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
