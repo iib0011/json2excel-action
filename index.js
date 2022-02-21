@@ -3,6 +3,7 @@ import {
 } from "./mocks.js";
 import xlsx from 'node-xlsx';
 import * as fs from "fs"
+
 const alerts = zap.site[0].alerts
 const valuable = alerts.map((alert) => {
     return {
@@ -15,11 +16,17 @@ const occurrences = valuable.map(alert => alert.risk).reduce(function (acc, curr
     return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
 }, {});
 const alertsSummaryConfig = [
-    ["Risk level", "Number of alerts"], ...Object.entries(occurrences)
+    ["Summary of alerts",""],["Risk level", "Number of alerts"], ...Object.entries(occurrences)
 ]
+const valuableTable= valuable.map((valuable)=>{
+    return [[valuable.risk,valuable.name],["Description",valuable.desc]]
+})
+const alertDetailsConfig=[["Alert details",""],...valuableTable.reduce((previous,current)=>{return [...previous,...current]})]
+const zapSheetConfig=[...alertsSummaryConfig,["",""], ...alertDetailsConfig];
+console.log(zapSheetConfig)
 var buffer = xlsx.build([{
-    name: 'mySheetName',
-    data: alertsSummaryConfig
+    name: 'OWASP Zap',
+    data: zapSheetConfig
 }]);
 const path = "zap.xlsx";
 fs.createWriteStream(path).write(buffer);
