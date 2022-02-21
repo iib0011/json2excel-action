@@ -1,14 +1,9 @@
-import {
-    zap
-} from "./mocks.js";
 const core = require('@actions/core');
 const github = require('@actions/github');
-import xlsx from 'node-xlsx';
-import * as fs from "fs"
+const xlsx = require('node-xlsx');
+const fs=require("fs");
 
-const exec = require('@actions/exec');
 
-await exec.exec('npm i');
 try {
     const zapRawData = fs.readFileSync(core.getInput("zap"));
     const zap = JSON.parse(zapRawData);
