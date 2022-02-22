@@ -34,7 +34,7 @@ try {
     }
     const buffer = xlsx.build(sheets);
     const path = "report.xlsx";
-    fs.createWriteStream(path).write(buffer);
+    core.setOutput(path,buffer.toString())
 } catch (error) {
     core.setFailed(error.message);
 }
