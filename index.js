@@ -13,7 +13,6 @@ try {
     let mobsfRawData;
     if (fs.existsSync(core.getInput("zap"))) {
         console.log("6666666666666666")
-
         zapRawData = fs.readFileSync(core.getInput("zap"));
     }
     if (fs.existsSync(core.getInput("mobsf"))) {
@@ -23,8 +22,7 @@ try {
     const zap = zapRawData ? JSON.parse(zapRawData) : null;
     const mobsf = mobsfRawData ? JSON.parse(mobsfRawData) : null;
     console.log("8888888888888888")
-
-    const buffer = xlsx.build([zap && {
+    const sheets = [zap && {
             name: 'OWASP Zap',
             data: getZapSheetConfig(zap)
         },
@@ -32,7 +30,10 @@ try {
             name: 'Mobsf',
             data: getMobsfSheetConfig(mobsf)
         }
-    ]);
+    ]
+    console.log("nnnnnnnnnnnn",sheets)
+
+    const buffer = xlsx.build(sheets);
     console.log("9999999999999999")
     const path = "report.xlsx";
     fs.createWriteStream(path).write(buffer);
