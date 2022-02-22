@@ -6,9 +6,13 @@ inputs:
     description: 'Path to zap'
     required: true
     default: 'report_json.json'
+  mobsf:  # id of input
+    description: 'Path to mobsf'
+    required: true
+    default: 'mobsf-report.json'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  report: # id of output
+    description: 'The excel report'
 runs:
   using: 'node16'
   main: 'index.js'
