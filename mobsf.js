@@ -1,4 +1,6 @@
 const getMobsfSheetConfig = (mobsf) => {
+    console.log("44444444444")
+
     if(!mobsf) return
     const valuableFileInfo = {
         filename: mobsf.file_name,
@@ -14,6 +16,8 @@ const getMobsfSheetConfig = (mobsf) => {
         version: mobsf.version,
         Platform_version: mobsf.version_code,
     }
+    console.log("5555555555555")
+
     const appInformationConfig = [
         ["App information", ""], , ...Object.entries(valuableAppInfo)
     ]

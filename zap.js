@@ -1,4 +1,5 @@
 const getZapSheetConfig = (zap) => {
+    console.log("2222222")
     if (!zap) return
     const alerts = zap.site[0].alerts
     const valuable = alerts.map((alert) => {
@@ -8,6 +9,8 @@ const getZapSheetConfig = (zap) => {
             name: alert.name
         }
     })
+    console.log("333333333333")
+
     const riskOccurences = valuable.map(alert => alert.risk).reduce(function (acc, curr) {
         return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
     }, {});
