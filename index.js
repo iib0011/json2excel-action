@@ -17,13 +17,13 @@ try {
     if (fs.existsSync(core.getInput("mobsf"))) {
         mobsfRawData = fs.readFileSync(core.getInput("mobsf"));
     }
-    const zap = zapRawData? JSON.parse(zapRawData):null;
-    const mobsf = mobsfRawData?JSON.parse(mobsfRawData):null;
-    const buffer = xlsx.build([{
+    const zap = zapRawData ? JSON.parse(zapRawData) : null;
+    const mobsf = mobsfRawData ? JSON.parse(mobsfRawData) : null;
+    const buffer = xlsx.build([zap && {
             name: 'OWASP Zap',
             data: getZapSheetConfig(zap)
         },
-        {
+        mobsf && {
             name: 'Mobsf',
             data: getMobsfSheetConfig(mobsf)
         }
