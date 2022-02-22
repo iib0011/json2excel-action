@@ -14,7 +14,7 @@ try {
     if (fs.existsSync(core.getInput("zap"))) {
         zapRawData = fs.readFileSync(core.getInput("zap"));
     }
-    if (fs.existsSync(core.getInput("zap"))) {
+    if (fs.existsSync(core.getInput("mobsf"))) {
         mobsfRawData = fs.readFileSync(core.getInput("mobsf"));
     }
     const zap = JSON.parse(zapRawData);
