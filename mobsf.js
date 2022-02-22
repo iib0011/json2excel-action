@@ -1,7 +1,5 @@
 const getMobsfSheetConfig = (mobsf) => {
-    console.log("44444444444")
-
-    if(!mobsf) return
+    if (!mobsf) return
     const valuableFileInfo = {
         filename: mobsf.file_name,
         size: mobsf.size
@@ -16,8 +14,6 @@ const getMobsfSheetConfig = (mobsf) => {
         version: mobsf.version,
         Platform_version: mobsf.version_code,
     }
-    console.log("5555555555555")
-
     const appInformationConfig = [
         ["App information", ""], , ...Object.entries(valuableAppInfo)
     ]
@@ -40,14 +36,14 @@ const getMobsfSheetConfig = (mobsf) => {
     }).reduce((previous, current) => {
         return [...previous, ...current]
     })
-
-    console.log(valuableappsecInfoArr)
     const appsecConfig1 = [
         ["AppSec", ""], , ...
-        valuableappsecInfoArr.map(valuableappsecInfo=>{return Object.entries(valuableappsecInfo).reduce((previous, current) => {
-            return [...previous, ...current]
+        valuableappsecInfoArr.map(valuableappsecInfo => {
+            return Object.entries(valuableappsecInfo).reduce((previous, current) => {
+                return [...previous, ...current]
+            })
         })
-    })]
+    ]
     return [...fileInformationConfig, ["", ""], ...appInformationConfig, ["", ""], ...appsecConfig1];
 }
 module.exports = {

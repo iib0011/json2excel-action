@@ -1,5 +1,4 @@
 const getZapSheetConfig = (zap) => {
-    console.log("2222222")
     if (!zap) return
     const alerts = zap.site[0].alerts
     const valuable = alerts.map((alert) => {
@@ -9,8 +8,6 @@ const getZapSheetConfig = (zap) => {
             name: alert.name
         }
     })
-    console.log("333333333333")
-
     const riskOccurences = valuable.map(alert => alert.risk).reduce(function (acc, curr) {
         return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
     }, {});
@@ -18,24 +15,20 @@ const getZapSheetConfig = (zap) => {
         ["Summary of alerts", ""],
         ["Risk level", "Number of alerts"], ...Object.entries(riskOccurences)
     ]
-    console.log("vvvvvvvvvvvvvv")
-
     const valuableTable = valuable.map((valuable) => {
         return [
             [valuable.risk, valuable.name],
-            ["Description", valuable.desc]
+            ["Description", valuable.desc],
+            ["", ""]
         ]
     })
-    console.log("tttttttttttttt")
-
     const alertDetailsConfig = [
         ["Alert details", ""], ...valuableTable.reduce((previous, current) => {
             return [...previous, ...current]
         })
     ]
-    console.log("zzzzzzzzzzzzz")
-
     return [...alertsSummaryConfig, ["", ""], ...alertDetailsConfig];
 }
-
-module.exports={getZapSheetConfig}
+module.exports = {
+    getZapSheetConfig
+}
