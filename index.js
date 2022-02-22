@@ -22,17 +22,20 @@ try {
     const zap = zapRawData ? JSON.parse(zapRawData) : null;
     const mobsf = mobsfRawData ? JSON.parse(mobsfRawData) : null;
     console.log("8888888888888888")
-    const sheets = [zap && {
+    const sheets = []
+    if (zap) {
+        sheets.push({
             name: 'OWASP Zap',
             data: getZapSheetConfig(zap)
-        },
-        mobsf && {
+        })
+    }
+    if (mobsf) {
+        sheets.push({
             name: 'Mobsf',
             data: getMobsfSheetConfig(mobsf)
-        }
-    ]
-    console.log("nnnnnnnnnnnn",sheets)
-
+        })
+    }
+    console.log("nnnnnnnnnnnn", sheets)
     const buffer = xlsx.build(sheets);
     console.log("9999999999999999")
     const path = "report.xlsx";
