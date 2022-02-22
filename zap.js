@@ -18,17 +18,23 @@ const getZapSheetConfig = (zap) => {
         ["Summary of alerts", ""],
         ["Risk level", "Number of alerts"], ...Object.entries(riskOccurences)
     ]
+    console.log("vvvvvvvvvvvvvv")
+
     const valuableTable = valuable.map((valuable) => {
         return [
             [valuable.risk, valuable.name],
             ["Description", valuable.desc]
         ]
     })
+    console.log("tttttttttttttt")
+
     const alertDetailsConfig = [
         ["Alert details", ""], ...valuableTable.reduce((previous, current) => {
             return [...previous, ...current]
         })
     ]
+    console.log("zzzzzzzzzzzzz")
+
     return [...alertsSummaryConfig, ["", ""], ...alertDetailsConfig];
 }
 
