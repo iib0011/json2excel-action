@@ -1,4 +1,5 @@
 const getMobsfSheetConfig = (mobsf) => {
+    if(!mobsf) return
     const valuableFileInfo = {
         filename: mobsf.file_name,
         size: mobsf.size

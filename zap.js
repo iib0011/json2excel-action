@@ -1,4 +1,5 @@
 const getZapSheetConfig = (zap) => {
+    if (!zap) return
     const alerts = zap.site[0].alerts
     const valuable = alerts.map((alert) => {
         return {
