@@ -23,7 +23,7 @@ const getZapSheetConfig = (zap) => {
         ]
     })
     const alertDetailsConfig = [
-        ["Alert details", ""], ...valuableTable.reduce((previous, current) => {
+        ["Alert details", "","Action","Comment"], ...valuableTable.reduce((previous, current) => {
             return [...previous, ...current]
         })
     ]

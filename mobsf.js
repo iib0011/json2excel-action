@@ -30,7 +30,7 @@ const getMobsfSheetConfig = (mobsf) => {
             return {
                 title: details.title,
                 description: details.description,
-                riskType: risk[0]
+                severity: risk[0]
             }
         })
     }).reduce((previous, current) => {
