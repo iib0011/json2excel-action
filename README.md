@@ -18,7 +18,7 @@ This action returns the excel report from zap and mobsf json results.
 The excel report
 ## Example usage
 
-uses: actions/iib0011/json2excel-action@v1
+```uses: actions/iib0011/json2excel-action@main
 with:
   zap: path/to/zap
   mobsf: path/to/mobsf
