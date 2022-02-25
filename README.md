@@ -1,21 +1,24 @@
 # Json to excel action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action returns the excel report from zap and mobsf json results.
 
 ## Inputs
 
-## `who-to-greet`
+## `zap`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** Path to Zap Json report.
+## `mobsf`
+
+**Required** Path to Mobsf Json report.
 
 ## Outputs
 
-## `time`
+## `report.xlsx`
 
-The time we greeted you.
-
+The excel report
 ## Example usage
 
-uses: actions/hello-world-docker-action@v1
+uses: actions/iib0011/json2excel-action@v1
 with:
-  who-to-greet: 'Mona the Octocat'
+  zap: path/to/zap
+  mobsf: path/to/mobsf
