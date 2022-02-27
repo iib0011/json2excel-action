@@ -18,7 +18,7 @@ This action returns the excel report from [zap](https://github.com/zaproxy/actio
 The excel report
 ## Example usage
 ```
-uses: actions/iib0011/json2excel-action@main
+uses: actions/iib0011/mobsf-zap-2excel-action
 with:
   zap: path/to/zap
   mobsf: path/to/mobsf
