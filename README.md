@@ -6,10 +6,10 @@ This action returns the excel report from [zap](https://github.com/zaproxy/actio
 
 ## `zap`
 
-**Required** Path to Zap Json report.
+**Optional** Path to Zap Json report. Default to `report_json.json`
 ## `mobsf`
 
-**Required** Path to Mobsf Json report.
+**Optional** Path to Mobsf Json report. Default to `mobsf-report.json`
 
 ## Outputs
 
