@@ -1,6 +1,6 @@
 # Json to excel action
 
-This action returns the excel report from zap and mobsf json results.
+This action returns the excel report from [zap](https://github.com/zaproxy/action-baseline) and [mobsf](https://github.com/fundacaocerti/mobsf-action) actions json results.
 
 ## Inputs
 
@@ -18,7 +18,7 @@ This action returns the excel report from zap and mobsf json results.
 The excel report
 ## Example usage
 
-```uses: actions/iib0011/json2excel-action@main
+`uses: actions/iib0011/json2excel-action@main
 with:
   zap: path/to/zap
-  mobsf: path/to/mobsf
+  mobsf: path/to/mobsf`
