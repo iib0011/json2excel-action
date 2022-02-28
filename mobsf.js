@@ -36,7 +36,6 @@ const getMobsfSheetConfig = (mobsf) => {
     }).reduce((previous, current) => {
         return [...previous, ...current]
     })
-    console.log(valuableappsecInfoArr);
     const appsecConfig1 = [
         ["AppSec", ""], ["Title","Description","Severity"], ...
         valuableappsecInfoArr.map(valuableappsecInfo => {
