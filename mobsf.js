@@ -36,12 +36,11 @@ const getMobsfSheetConfig = (mobsf) => {
     }).reduce((previous, current) => {
         return [...previous, ...current]
     })
+    console.log(valuableappsecInfoArr);
     const appsecConfig1 = [
-        ["AppSec", ""], , ...
+        ["AppSec", ""], ["Title","Description","Severity"], ...
         valuableappsecInfoArr.map(valuableappsecInfo => {
-            return Object.entries(valuableappsecInfo).reduce((previous, current) => {
-                return [...previous, ...current]
-            })
+            return [valuableappsecInfo.title, valuableappsecInfo.description, valuableappsecInfo.severity]
         })
     ]
     return [...fileInformationConfig, ["", ""], ...appInformationConfig, ["", ""], ...appsecConfig1];
